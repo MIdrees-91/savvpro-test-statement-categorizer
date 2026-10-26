@@ -25,3 +25,19 @@ def test_normalize_strips_codes_and_spaces():
 ])
 def test_classify(desc, amount, expected):
     assert classify(desc, D(amount)).category == expected
+
+
+@pytest.mark.parametrize("desc,amount,expected", [
+    ("adobe creative cloud", "-5.00", "Software"),
+    ("ZOOM.US 888123", "-15.99", "Software"),
+    ("QANTAS AIRWAYS", "-320.00", "Travel"),
+    ("WOOLWORTHS 1234", "-85.00", "Needs Review"),
+    ("ADOBE REFUND", "54.99", "Refund"),
+    ("ADOBE", "54.99", "Needs Review"),
+    ("TRANSFER FROM SAVINGS", "500.00", "Transfer"),
+    ("CLIENT PAYMENT ACME", "0", "Needs Review"),
+    ("SOME STORE RETURN", "20.00", "Refund"),
+    ("   ###   ", "-9.00", "Needs Review"),
+])
+def test_classify_edge_cases(desc, amount, expected):
+    assert classify(desc, D(amount)).category == expected

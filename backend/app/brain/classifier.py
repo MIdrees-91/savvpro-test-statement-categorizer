@@ -7,14 +7,19 @@ from .normalizer import normalize
 NEEDS_REVIEW = "Needs Review"
 
 SPEND_RULES = {
-    "Software": ["ADOBE", "GITHUB", "MICROSOFT", "FIGMA", "JETBRAINS",
-                 "AMAZON WEB SERVICES", "GOOGLE WORKSPACE"],
-    "Travel": ["UBER TRIP", "UBER", "LYFT", "AIRLINES", "HOTEL", "AIRBNB"],
-    "Meals": ["UBER EATS", "DOORDASH", "STARBUCKS", "RESTAURANT"],
-    "Office": ["STAPLES", "OFFICE DEPOT"],
-    "Utilities": ["ELECTRIC", "INTERNET", "TELSTRA", "WATER BILL"],
+    "Software": ["ADOBE", "GITHUB", "MICROSOFT", "FIGMA", "JETBRAINS", "SLACK", "ZOOM",
+                 "NOTION", "DROPBOX", "OPENAI", "CANVA", "NAMECHEAP", "GODADDY",
+                 "DIGITALOCEAN", "AMAZON WEB SERVICES", "GOOGLE WORKSPACE"],
+    "Travel": ["UBER TRIP", "UBER", "LYFT", "TAXI", "AIRLINES", "AIRWAYS", "QANTAS",
+               "HOTEL", "AIRBNB", "BOOKING COM", "PARKING", "TOLL"],
+    "Meals": ["UBER EATS", "DOORDASH", "MENULOG", "STARBUCKS", "MCDONALD", "KFC",
+              "RESTAURANT", "PIZZA"],
+    "Office": ["STAPLES", "OFFICE DEPOT", "OFFICEWORKS"],
+    "Utilities": ["ELECTRIC", "INTERNET", "TELSTRA", "OPTUS", "VODAFONE",
+                  "WATER BILL", "GAS BILL", "ORIGIN ENERGY"],
     # Merchants that sell everything: guessing would be wrong.
-    NEEDS_REVIEW: ["AMAZON", "WALMART", "TARGET", "PAYPAL"],
+    NEEDS_REVIEW: ["AMAZON", "WALMART", "TARGET", "PAYPAL", "SQUARE", "EBAY",
+                   "COSTCO", "KMART", "WOOLWORTHS", "COLES"],
 }
 TRANSFER_WORDS = ["TRANSFER TO", "TRANSFER FROM", "INTERNAL TRANSFER", "PAYMENT THANK YOU"]
 REFUND_WORDS = ["REFUND", "REVERSAL", "RETURN"]
